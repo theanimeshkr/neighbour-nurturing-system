@@ -5,7 +5,7 @@
 }
 
 :root {
-    --primary-color: #2ecc71;
+    --primary-color: #C8E6C9;
     --secondary-color: #3498db;
     --dark-color: #2c3e50;
     --light-color: #ecf0f1;
@@ -127,9 +127,9 @@ body {
 }
 
 .btn-primary:hover {
-    background: #27ae60;
+    background: #9BCF9A;
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+    box-shadow: 0 5px 15px rgba(155, 207, 154, 0.35);
 }
 
 .btn-secondary {
@@ -252,7 +252,7 @@ body {
 .control-group select:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.1);
+    box-shadow: 0 0 0 3px rgba(155, 207, 154, 0.12);
 }
 
 #geolocateBtn {
@@ -355,7 +355,7 @@ body {
 }
 
 .neighbors-grid::-webkit-scrollbar-thumb:hover {
-    background: #27ae60;
+    background: #9BCF9A;
 }
 
 .neighbor-card {
