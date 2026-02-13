@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighbour Nurturing Index - Community Support Network</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🏘️ Neighbour Nurturing Index</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#neighbors">Neighbors</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Build Stronger Communities</h1>
+            <p>Connect with your neighbors, share resources, and support each other</p>
+            <button class="btn btn-primary" onclick="scrollToSection('neighbors')">Find Neighbors</button>
+            <button class="btn btn-secondary" onclick="scrollToSection('resources')">Share Resources</button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Our Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Neighbor Directory</h3>
+                <p>Find and connect with neighbors in your area</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📦</div>
+                <h3>Resource Sharing</h3>
+                <p>Share tools, books, skills, and other resources</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎉</div>
+                <h3>Community Events</h3>
+                <p>Discover and organize neighborhood events</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🆘</div>
+                <h3>Support Network</h3>
+                <p>Get help when you need it, help others in return</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3>Messaging</h3>
+                <p>Direct communication with neighbors</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Community Stats</h3>
+                <p>Track neighborhood engagement and growth</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Neighbors Index Section -->
+    <section id="neighbors" class="neighbors">
+        <h2>Neighbor Directory & Interactive Map</h2>
+        <div class="map-section">
+            <div class="map-controls">
+                <div class="control-group">
+                    <label>Filter by Skills:</label>
+                    <select id="skillFilter" onchange="filterBySkill()">
+                        <option value="">All Skills</option>
+                        <option value="Cooking">Cooking</option>
+                        <option value="IT">IT Support</option>
+                        <option value="Tutoring">Tutoring</option>
+                        <option value="Carpentry">Carpentry</option>
+                        <option value="Health">Health & Yoga</option>
+                        <option value="Mechanics">Mechanics</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label>Map Type:</label>
+                    <select id="mapTypeSelector" onchange="changeMapType()">
+                        <option value="roadmap">Road Map</option>
+                        <option value="satellite">Satellite</option>
+                        <option value="terrain">Terrain</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" id="geolocateBtn" onclick="geolocateUser()">📍 Find My Location</button>
+            </div>
+
+            <div class="map-legend">
+                <h4>Map Legend</h4>
+                <div class="legend-item">
+                    <span class="legend-marker" style="background: #2ecc71;"></span>
+                    <span>Neighbors</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-marker" style="background: #3498db;"></span>
+                    <span>Your Location</span>
+                </div>
+                <p style="font-size: 0.85rem; margin-top: 0.5rem;">Click markers to view details</p>
+            </div>
+
+            <div class="search-bar" style="margin-bottom: 1rem;">
+                <input type="text" id="searchInput" placeholder="Search neighbors by name, skills, or interests..." onkeyup="filterNeighbors()">
+            </div>
+
+            <div class="neighbors-container">
+                <div id="map" class="map-container"></div>
+                <div class="neighbors-sidebar">
+                    <div id="neighborsList" class="neighbors-grid">
+                        <!-- Neighbors will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="resources">
+        <h2>Shared Resources</h2>
+        <div class="resource-input">
+            <input type="text" id="resourceName" placeholder="Resource name">
+            <input type="text" id="resourceDesc" placeholder="Description">
+            <input type="text" id="resourceOwner" placeholder="Your name">
+            <button class="btn btn-primary" onclick="addResource()">Add Resource</button>
+        </div>
+        <div id="resourcesList" class="resources-grid">
+            <!-- Resources will be populated by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <h2>Community Events</h2>
+        <div class="event-input">
+            <input type="text" id="eventName" placeholder="Event name">
+            <input type="text" id="eventDate" placeholder="Date (YYYY-MM-DD)">
+            <input type="text" id="eventDesc" placeholder="Description">
+            <button class="btn btn-primary" onclick="addEvent()">Add Event</button>
+        </div>
+        <div id="eventsList" class="events-list">
+            <!-- Events will be populated by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <div class="contact-content">
+            <p>Have questions? Want to improve our platform? We'd love to hear from you!</p>
+            <form onsubmit="submitContact(event)">
+                <input type="text" placeholder="Your name" required>
+                <input type="email" placeholder="Your email" required>
+                <textarea placeholder="Your message" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Neighbour Nurturing Index. Building stronger communities, one neighborhood at a time.</p>
+    </footer>
+
+    <!-- Google Maps API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDemoKeyReplace123&callback=initMap"></script>
+    
+    <!-- API Service -->
+    <script src="api.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
