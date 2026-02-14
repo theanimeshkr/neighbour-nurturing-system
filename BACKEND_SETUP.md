@@ -13,7 +13,7 @@
 ## Step 1: Clone/Navigate to Project
 
 ```bash
-cd "c:\games\student loan mamagement system\backend"
+cd "c:\games\neighbour nurturing index\backend"
 ```
 
 ---
