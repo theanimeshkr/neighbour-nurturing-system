@@ -1,7 +1,7 @@
 // Sample data for neighbors with coordinates (COMPLETE FILE RESET)
 const neighborsData = [
     {
-        name: 'Sarah Johnson',
+        name: 'Harshit raj',
         skills: 'Cooking, Gardening',
         interests: 'Community gardening, Potlucks',
         street: 'Maple Street',
@@ -9,7 +9,7 @@ const neighborsData = [
         lng: -74.0060
     },
     {
-        name: 'Michael Chen',
+        name: 'Priyanshu raj',
         skills: 'IT Support, Repairs',
         interests: 'Technology, Home improvement',
         street: 'Oak Avenue',
@@ -17,7 +17,7 @@ const neighborsData = [
         lng: -73.7949
     },
     {
-        name: 'Emma Williams',
+        name: 'Nikhil arya',
         skills: 'Tutoring, Writing',
         interests: 'Education, Mentoring',
         street: 'Elm Road',
@@ -25,7 +25,7 @@ const neighborsData = [
         lng: -73.9680
     },
     {
-        name: 'David Brown',
+        name: 'Rishabh Verma',
         skills: 'Carpentry, Landscaping',
         interests: 'DIY projects, Outdoor activities',
         street: 'Birch Lane',
@@ -33,7 +33,7 @@ const neighborsData = [
         lng: -73.9840
     },
     {
-        name: 'Lisa Martinez',
+        name: 'Rajat kumar singh',
         skills: 'Health, Yoga',
         interests: 'Wellness, Community fitness',
         street: 'Pine Street',
@@ -41,7 +41,7 @@ const neighborsData = [
         lng: -73.9776
     },
     {
-        name: 'James Wilson',
+        name: 'kritesh kumar kashyap',
         skills: 'Mechanics, Car repair',
         interests: 'Vehicles, Tool sharing',
         street: 'Cedar Drive',
